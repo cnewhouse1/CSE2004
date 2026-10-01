@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Survey</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, Sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Class Survey</h1>
+
+  <canvas id="myChart"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate Student'],
+        datasets: [{
+          label: 'Students',
+          data: [0, 11, 21, 19, 2]
+        }]
+      }
+    });
+  </script>
+
+</body>
+</html>
