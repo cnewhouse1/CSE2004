@@ -527,11 +527,11 @@ footer a:hover {
 
 #food th,
 #food td {
-    padding: 4px;
+    padding: 3px;
 }
 
 #food li {
-    font-size: 10px;
+    font-size: 7px;
 }
   #top {
     display: block;
