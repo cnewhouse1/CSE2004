@@ -465,6 +465,10 @@ footer a:hover {
     text-align: center;
 }
 
+#welcome h2 {
+    font-size: 50px;
+}
+
     .hpbun {
         width: 100%;
     }
@@ -529,8 +533,8 @@ nav {
 }
 
 nav a {
-    font-size: 14px;
-    margin: 5px;
-    padding: 8px 10px;
+    font-size: 11px;
+    margin: 2px;
+    padding: 6px 5px;
 }
 }
