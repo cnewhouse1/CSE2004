@@ -181,6 +181,7 @@ section h2 {
     width: 70%;
     margin: 30px auto;
     border-radius: 15px;
+    border: 3px solid white;
 }
 
 #prep p {
@@ -449,6 +450,15 @@ footer a:hover {
 
 @media (max-width: 700px) {
 
+    body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+    section {
+    padding: 50px 20px;
+}
+
     #home-content {
         display: block;
         padding: 80px 20px;
@@ -507,12 +517,17 @@ footer a:hover {
 }
 
 #food table {
-    font-size: 12px;
+    font-size: 10px;
+    width: 100%;
+}
+
+#food {
+    overflow-x: hidden;
 }
 
 #food th,
 #food td {
-    padding: 5px;
+    padding: 4px;
 }
 
 #food li {
@@ -529,12 +544,13 @@ footer a:hover {
 }
 
 nav {
-    padding: 10px;
+    padding: 5px;
+    white-space: nowrap;
 }
 
 nav a {
     font-size: 11px;
     margin: 2px;
-    padding: 6px 5px;
+    padding: 6px 4px;
 }
 }
