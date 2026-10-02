@@ -84,7 +84,7 @@ p, li, td, th, label {
     line-height: 1.6;
 }
 
-#center {
+.center {
     text-align:center;
 }
 
