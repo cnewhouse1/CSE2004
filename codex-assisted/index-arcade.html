@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Petty: Insult Generator</title>
+    <meta name="description" content="Get Petty helps you generate sharp insults and clever comebacks.">
+    <meta name="theme-color" content="#e52b32">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Get Petty: Insult Generator">
+    <meta property="og:description" content="Generate sharp insults and clever comebacks with Get Petty.">
+    <meta property="og:image" content="icon.png">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="1440">
+    <meta property="og:image:alt" content="Get Petty icon with angry eyes on a red background">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get Petty: Insult Generator">
+    <meta name="twitter:description" content="Generate sharp insults and clever comebacks with Get Petty.">
+    <meta name="twitter:image" content="icon.png">
+    <meta name="twitter:image:alt" content="Get Petty icon with angry eyes on a red background">
+    <link rel="stylesheet" href="style-arcade.css">
+   <link rel="stylesheet" href="https://use.typekit.net/mpd6fuh.css">
+    <script src="script-arcade.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#insults">INSULT GENERATOR</a>
+            <a href="#comebacks">COMEBACK GENERATOR</a>
+            <a href="#favorites">FAVORITES</a>
+        </nav>
+    </header>
+
+    <section id="home" class="home-section">
+
+        <img src="homepage1.png" alt="Get Petty" class="home-image">
+
+        <div class="home-content">
+            <h1>Disclaimer: You're about to make some <span class="enemies-word">enemies</span></h1>
+
+            <p>
+                This website is reserved for those who want to obliterate
+                their friends, foes, arch nemeses... the list could go on. We'll help you walk away from
+                conversations as a successful bully.
+            </p>
+
+            <div class="home-buttons">
+                <a href="#insults" class="main-button">GENERATE AN INSULT</a>
+                <a href="#comebacks" class="main-button">CREATE A COMEBACK</a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="insults" class="generator-section">
+
+        <h1>Need an Insult?</h1>
+        <p class="section-description">Time to make someone's day a little worse</p>
+
+        <div class="generator-card">
+
+            <h2>Lock in...</h2>
+
+            <p class="small-description">
+                Click below for your insult
+            </p>
+
+            <button id="generate-insult" class="generate-button">
+                GENERATE
+            </button>
+
+            <div id="insult-loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Cooking up something NASTY...</p>
+            </div>
+
+            <div id="insult-result" class="result-section hidden">
+
+                <p id="insult-text" class="result-text"></p>
+
+                <div class="result-actions">
+                    <button id="copy-insult" class="action-button">
+                        COPY
+                    </button>
+
+                    <button id="save-insult" type="button" class="action-button">
+                        SAVE TO FAVORITES
+                    </button>
+
+                    <button id="another-insult" class="action-button">
+                        TRY AGAIN
+                    </button>
+
+                    <button id="close-insult" type="button" class="action-button">
+                        RETURN TO SITE
+                    </button>
+                </div>
+
+            </div>
+
+            <p id="insult-error" class="error-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <section id="comebacks" class="generator-section">
+
+        <h1>Let's Hit Back Harder</h1>
+
+        <p class="section-description">
+            Give us the context- we'll handle the comeback
+        </p>
+
+        <div class="generator-card">
+
+            <h2>What did they say?</h2>
+
+            <textarea
+                id="comeback-input"
+                placeholder="What are we replying to?"
+                rows="4"
+            ></textarea>
+
+            <h2>Choose your tone</h2>
+
+            <div class="tone-options">
+                <button class="tone-button selected" data-tone="Funny">
+                    FUNNY
+                </button>
+
+                <button class="tone-button" data-tone="Clever">
+                    CLEVER
+                </button>
+
+                <button class="tone-button" data-tone="Sarcastic">
+                    SARCASTIC
+                </button>
+
+                <button class="tone-button" data-tone="Petty">
+                    PETTY
+                </button>
+
+                <button class="tone-button" data-tone="Absolutely brutal">
+                    ABSOLUTELY BRUTAL
+                </button>
+            </div>
+
+            <button id="generate-comeback" class="generate-button">
+                GENERATE COMEBACK
+            </button>
+
+            <div id="comeback-loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Thinking of something NASTY...</p>
+            </div>
+
+            <div id="comeback-result" class="result-section hidden">
+
+                <p id="comeback-text" class="result-text"></p>
+
+                <div class="result-actions">
+                    <button id="copy-comeback" class="action-button">
+                        COPY
+                    </button>
+
+                    <button id="save-comeback" type="button" class="action-button">
+                        SAVE TO FAVORITES
+                    </button>
+
+                    <button id="another-comeback" class="action-button">
+                        TRY AGAIN
+                    </button>
+
+                    <button id="close-comeback" type="button" class="action-button">
+                        RETURN TO SITE
+                    </button>
+                </div>
+
+            </div>
+
+            <p id="comeback-error" class="error-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <section id="favorites" class="favorites-section">
+
+        <h1>Saved Insults</h1>
+
+        <p class="section-description">
+            All your favorites in one place
+        </p>
+
+        <div id="favorites-list" class="favorites-list">
+
+            <p id="empty-message">
+                Nothing to see here... yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>Website created and designed by Charlotte Newhouse.</p>
+    </footer>
+
+</body>
+</html>
