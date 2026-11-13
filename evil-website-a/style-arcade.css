@@ -298,7 +298,7 @@ textarea:focus {
     z-index: 30;
     margin: 0;
     border-radius: 0;
-    padding: max(32px, 8vh) 8vw;
+    padding: clamp(16px, 6vh, 72px) clamp(16px, 8vw, 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,6 +313,7 @@ textarea:focus {
 
 #insult-result .result-text,
 #comeback-result .result-text {
+    width: 100%;
     max-width: 1050px;
     font-size: clamp(30px, 6vw, 76px);
     line-height: 1.12;
@@ -324,6 +325,7 @@ textarea:focus {
 
 #insult-result .result-actions,
 #comeback-result .result-actions {
+    max-width: 100%;
     margin-top: 42px;
     opacity: 0;
     transform: translateY(12px);
@@ -351,6 +353,11 @@ textarea:focus {
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+}
+
+@media (max-height: 700px) {
+    #insult-result .result-actions,
+    #comeback-result .result-actions { margin-top: 24px; }
 }
 
 .action-button {

@@ -13,6 +13,31 @@ let comebackActionsTimer;
 let insultReturnScrollY = 0;
 let comebackReturnScrollY = 0;
 
+function fitResultToViewport(result) {
+    if (!result || result.classList.contains("hidden")) return;
+
+    const quote = result.querySelector(".result-text");
+    const actions = result.querySelector(".result-actions");
+    if (!quote || !actions) return;
+
+    quote.style.fontSize = "";
+    const styles = getComputedStyle(result);
+    const availableHeight = result.clientHeight -
+        parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom);
+    const gap = parseFloat(getComputedStyle(actions).marginTop) || 0;
+    let size = parseFloat(getComputedStyle(quote).fontSize);
+
+    while (size > 14 && quote.scrollHeight + gap + actions.scrollHeight > availableHeight) {
+        size -= 1;
+        quote.style.fontSize = size + "px";
+    }
+}
+
+window.addEventListener("resize", function() {
+    fitResultToViewport(document.getElementById("insult-result"));
+    fitResultToViewport(document.getElementById("comeback-result"));
+});
+
 // Rotate the homepage artwork, preloading each frame so the crossfade stays smooth.
 const homepageImageFiles = [
     "homepage1.png",
@@ -94,6 +119,7 @@ currentInsult = textArea.value;
 
         document.getElementById("insult-text").textContent = currentInsult;
         insultResult.classList.remove("hidden");
+        fitResultToViewport(insultResult);
         // Restart the reveal animation whenever a new insult arrives.
         void insultResult.offsetWidth;
         insultActionsTimer = setTimeout(function() {
@@ -190,6 +216,7 @@ async function generateComeback() {
 
         document.getElementById("comeback-text").textContent = currentComeback;
         comebackResult.classList.remove("hidden");
+        fitResultToViewport(comebackResult);
         void comebackResult.offsetWidth;
         comebackActionsTimer = setTimeout(function() {
             comebackResult.classList.add("actions-visible");
